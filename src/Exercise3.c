@@ -54,12 +54,13 @@ void Ex3(int in_arr[], int n){
 	for(int col =0; col <= n; col++){
         for(int row =0; row <= n; row++){
          for(int sort_col = col +1; sort_col <= n; sort_col++){
-             for(int sort_row = row +1 ; sort_row <= n; sort_row++){  
-                 if(col==row && sort_col == sort_row && a[row][col] > a[sort_row][sort_col]){
+             for(int sort_row = 0 ; sort_row < n- col -1; sort_row++){  
+                 if(a[row][col] > a[sort_row][sort_col]){
                     int temp = a[row][col];
 					a[row][col] = a[sort_row][sort_col];
 					a[sort_row][sort_col] = temp;
                  }
+			 }
 				 int q = col;
 				 for(int j = n - q -1; j >0; j--, q++){
 					if(a[j][q]<a[j-1][q+1])
@@ -69,7 +70,7 @@ void Ex3(int in_arr[], int n){
 						a[j-1][q+1]=k;  
 					}
                  }
-            }
+            
          }
          
         }
