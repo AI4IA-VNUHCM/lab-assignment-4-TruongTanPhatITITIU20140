@@ -53,23 +53,25 @@ void Ex3(int in_arr[], int n){
 	//Your codes here
 	for(int col =0; col < n; col++){
 			//part 1
-			for (int row = 0; row > n-col -1; row++){
+			for (int row = 0; row < n-col -1; row++){
 				  if(a[row+1][row+1]<a[row][row]){
 						int temp = a[row][row];
 						a[row][row]=a[row+1][row+1];
 						a[row+1][row+1]=temp;  
 				  }
 			}
+	}
 				// part 2
-				 int q = col;
-				 for(int j = n - q -1; j >0; j--, q++){
-					if(a[j][q]<a[j-1][q+1])
-					{
-						int temp=a[j][q];
-						a[j][q]=a[j-1][q+1];
-						a[j-1][q+1]=temp;  
-					}
-                 }
+	for(int col =0; col < n; col++){		
+		int q = col;
+		for(int j = n - q -1; j >0; j--, q++){
+			if(a[j][q]<a[j-1][q+1])
+			{
+				int temp=a[j][q];
+				a[j][q]=a[j-1][q+1];
+				a[j-1][q+1]=temp;  
+			}
+        }
             
     }
 	printArray(a,n,n);
