@@ -36,22 +36,21 @@ void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
-	//Your codes here	
-	int max = 0;
+	//Your codes here
 	int min;
+    int max;
+    max = -100;
 	for (int i=0; i< m; i++){
 		//gan min cho hang tu dau tien
-         min = 9999;
+        min = 9999;
 		for (int j=0; j<n; j++){
             //chay min
-			if (a[i][j] < min) {
-				min = a[i][j];
-			}
-			 if (max < min) {
-				max = min;
-			}
+			if (a[i][j] < min) min = a[i][j];
+            //gan max cua min
+		    if (max < min) max = min;
         }
-	printf("%d", max);
+	}
+    printf("%d", max);
 }
 
 int main(int argc, char *argv[]) {
