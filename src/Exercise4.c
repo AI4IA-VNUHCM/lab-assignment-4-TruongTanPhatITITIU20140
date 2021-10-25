@@ -69,12 +69,17 @@ void removeRow(int a[SIZE][SIZE], int rowIndex, int m, int n){
 
 void insertCol(int arr[], int a[SIZE][SIZE],int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int )
 }
 
 void removeCol(int a[SIZE][SIZE], int colIndex, int m, int n){
 	//Your codes here
-	
+	for(int j =colIndex; j<n; j++){
+		for(int i =0; i<m; i++){
+			a[i][j] = a[i][j+1];
+		}
+	}
+	printArray(a,m,n-1);
 }
 
 int main(int argc, char *argv[]) {
