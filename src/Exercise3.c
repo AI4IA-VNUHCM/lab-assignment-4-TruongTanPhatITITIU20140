@@ -64,8 +64,8 @@ void Ex3(int in_arr[], int n){
 				// part 2
 	for(int col =0; col < n; col++){		
 		int q = col;
-		for(int j = n - q -1; j >0; j--, q++){
-			if(a[j][q]<a[j-1][q+1])
+		for(int j = n - col -1; 0 < j; j--, q++){
+			if(a[j][q] < a[j-1][q+1])
 			{
 				int temp=a[j][q];
 				a[j][q]=a[j-1][q+1];
