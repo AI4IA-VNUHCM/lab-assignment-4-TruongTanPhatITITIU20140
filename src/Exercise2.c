@@ -1,7 +1,7 @@
 /*
 2.	Write a program to input an array of m x n.
-Sort the odd column in increasing order and the
-even column in decreasing order.
+Sort the odd col in increasing order and the
+even col in decreasing order.
 Ex:
 ___________________________________________________________________________________
 | Input: 5(row) 4(col) 10 21 12 53 64 53 86 72 68 99 10 11 12 13 14 15 16 17 18 19 |
@@ -26,12 +26,12 @@ ________________________________________________________________________________
 
 void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 {
-	int row, column;
+	int row, col;
 	int counter = 0;
 	//Convert 1D array to 2D array
 	for (row = 0; row <= (m - 1); row ++){
-		for (column = 0; column <= (n - 1); column ++){
-			a[row][column] = arr[counter];
+		for (col = 0; col <= (n - 1); col ++){
+			a[row][col] = arr[counter];
 			counter++;
 		}
 	}
@@ -39,11 +39,11 @@ void Array2Dconverter(int arr[], int a[SIZE][SIZE], int m, int n)
 
 void printArray(int a[SIZE][SIZE], int m, int n)
 {
-	int row, column;
+	int row, col;
 
 	for (row = 0; row <= (m - 1); row ++){
-		for (column = 0; column <= (n - 1); column ++){
-			printf("%d ", a[row][column]);
+		for (col = 0; col <= (n - 1); col ++){
+			printf("%d ", a[row][col]);
 		}
 		printf("\n");
 	}
@@ -53,7 +53,18 @@ void Ex2(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here
-
+	int col, row;
+	for(col = 0; col < n; col++){
+		for(row = 0; row < m; row++){
+			for(int sort = row + 1; sort < m; sort++){
+					if((a[row][col] - a[sort][col]) * ((col % 2 + 1) * 2 - 3) > 0){
+							int temp = a[row][col];
+							a[row][col] = a[sort][col];
+							a[sort][col] = temp;
+					}
+			}
+		}
+	}
 	printArray(a, m, n);
 }
 
