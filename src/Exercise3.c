@@ -5,7 +5,7 @@ First diagonal starts with element [0,0], second diagonal starts with elements [
 Ex:
 _________________________________________________________________
 | Input: 4(edge) 10 21 12 53 64 53 86 72 68 99 10 11 12 13 14 15 |
-| The converted 2D array will be like this:                      |
+| The converted 2D array will be lirowe this:                      |
 | 10 21 12 53                                                    |
 | 64 53 86 72                                                    |
 | 68 99 10 11                                                    |
@@ -51,13 +51,13 @@ void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
-	for(int col =0; col <= n; col++){
-        for(int row =0; row <= n; row++){
-			for (int k = 0; k > n-col -1; k++){
-				  if(a[k+1][k+1]<a[k][k]){
-						int temp = a[k][k];
-						a[k][k]=a[k+1][k+1];
-						a[k+1][k+1]=temp;  
+	for(int col =0; col < n; col++){
+			//part 1
+			for (int row = 0; row > n-col -1; row++){
+				  if(a[row+1][row+1]<a[row][row]){
+						int temp = a[row][row];
+						a[row][row]=a[row+1][row+1];
+						a[row+1][row+1]=temp;  
 				  }
 			}
 				// part 2
@@ -71,9 +71,6 @@ void Ex3(int in_arr[], int n){
 					}
                  }
             
-         
-         
-        }
     }
 	printArray(a,n,n);
 }
@@ -91,19 +88,3 @@ int main(int argc, char *argv[]) {
 	
 	return 0;
 }
-
-
-
-/*
-
-  21 10 53 12 
-  53 64 72 86 
-  99 68 11 10 
-  13 12 15 14 
-
-11 10 53 12 
-53 14 13 86 
-99 68 21 10 
-72 12 15 64
-
-*/
