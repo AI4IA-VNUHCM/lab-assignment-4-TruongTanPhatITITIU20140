@@ -51,7 +51,21 @@ void Ex3(int in_arr[], int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(in_arr,a,n,n);
 	//Your codes here
-	
+	for(int col =0; col <= n; col++){
+        for(int row =0; row <= n; row++){
+         for(int sort_col = col +1; sort_col <= n; sort_col++){
+             for(int sort_row = row +1 ; sort_row <= n; sort_row++){  
+                 if(col==row && sort_col == sort_row && a[row][col] < a[sort_row][sort_col]){
+                     int temp = a[row][col];
+						a[row][col] = a[sort_row][sort_col];
+						a[sort_row][sort_col] = temp;
+                 }
+            
+            }
+         }
+         
+        }
+    }
 	printArray(a,n,n);
 }
 
@@ -68,3 +82,19 @@ int main(int argc, char *argv[]) {
 	
 	return 0;
 }
+
+
+
+/*
+
+  21 10 53 12 
+  53 64 72 86 
+  99 68 11 10 
+  13 12 15 14 
+
+11 10 53 12 
+53 14 13 86 
+99 68 21 10 
+72 12 15 64
+
+*/
