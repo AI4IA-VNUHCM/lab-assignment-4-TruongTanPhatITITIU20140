@@ -60,12 +60,15 @@ void Ex3(int in_arr[], int n){
 					a[row][col] = a[sort_row][sort_col];
 					a[sort_row][sort_col] = temp;
                  }
-                 if(col + row == n-1 && sort_col + sort_row == n-1 && a[row][col] > a[sort_row][sort_col]){
-                    int temp = a[row][col];
-					a[row][col] = a[sort_row][sort_col];
-					a[sort_row][sort_col] = temp;
+				 int q = col;
+				 for(int j = n - q -1; j >0; j--, q++){
+					if(a[j][q]<a[j-1][q+1])
+					{
+						int k=a[j][q];
+						a[j][q]=a[j-1][q+1];
+						a[j-1][q+1]=k;  
+					}
                  }
-            
             }
          }
          
