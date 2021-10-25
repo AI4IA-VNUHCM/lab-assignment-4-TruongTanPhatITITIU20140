@@ -37,10 +37,11 @@ void Ex5(int arr[], int m, int n){
 	int a[SIZE][SIZE];
 	Array2Dconverter(arr,a,m,n);
 	//Your codes here	
-	int max = a[0][0];
+	int max = 0;
+	int min;
 	for (int i=0; i< m; i++){
 		//gan min cho hang tu dau tien
-        int min = a[i][0];
+         min = 9999;
 		for (int j=0; j<n; j++){
             //chay min
 			if (a[i][j] < min) {
