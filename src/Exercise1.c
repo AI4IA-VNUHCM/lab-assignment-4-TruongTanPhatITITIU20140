@@ -25,7 +25,7 @@ void Ex1(int n){
 	//Your codes here
     for(int i = 0; i <= n; i++){
 		for(int j = 0; j <= i; j++){
-			printf("%d",C(j,i));
+			printf("%d ",C(j,i));
 		}
 		printf("\n");
 	}
