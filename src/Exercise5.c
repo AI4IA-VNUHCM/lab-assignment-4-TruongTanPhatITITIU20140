@@ -43,12 +43,12 @@ void Ex5(int arr[], int m, int n){
 	for (int i=0; i< m; i++){
 		//gan min cho hang tu dau tien
         min = 9999;
-		for (int j=0; j<n; j++){
+		for (int j=0; j< n; j++){
             //chay min
 			if (a[i][j] < min) min = a[i][j];
-            //gan max cua min
-		    if (max < min) max = min;
         }
+		 //gan max cua min
+		    if (max < min) max = min;
 	}
     printf("%d", max);
 }
