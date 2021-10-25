@@ -45,10 +45,13 @@ void Ex5(int arr[], int m, int n){
         min = a[i][0];
 		for (int j=0; j<n; j++){
             //chay min
-			if (a[i][j] < min) min = a[i][j];
-            //gan max cua min
-		    if (max < min) max = min;
+			if (a[i][j] < min) {
+				min = a[i][j];
+			}
         }
+		//gan max cua min
+		    if (max < min) {
+				max = min;
 	}
 	printf("%d", max);
 }
