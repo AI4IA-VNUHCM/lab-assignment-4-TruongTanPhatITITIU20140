@@ -61,17 +61,16 @@ void Ex3(int in_arr[], int n){
 				  }
 			}
 	}
-				// part 2
-	for(int col =n-1; col >0; col--){		
-		for(int j = col -1; j >= 0; j--){
-			if (a[col][n - col - 1] < a[j][n - j - 1]) {
+	// part 2
+	for (int col = n - 1; col > 0; col--) {
+		for (int row = col - 1; row >= 0; row--){
+			if (a[col][n - col - 1] < a[row][n - row - 1]){
 				int temp = a[col][n - col - 1];
-				a[col][n - col - 1] = a[j][n - j - 1];
-				a[j][n - j - 1] = temp;
+				a[col][n - col - 1] = a[row][n - row - 1];
+				a[row][n - row - 1] = temp;
 			}
-        }
-            
-    }
+		}
+	}
 	printArray(a,n,n);
 }
 
